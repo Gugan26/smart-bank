@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Account</title>
+    <script src="script.js" defer></script>
+    <style>
+        /* Define the unique bank-style color palette */
+        :root {
+            --primary-blue: #1E3A8A; /* Deep Indigo/Navy */
+            --secondary-teal: #14B8A6; /* Vibrant Teal Accent */
+            --bg-dark: #0F172A; /* Slate/Dark Background */
+        }
+
+        /* 1. Global Body and Background Styling */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            /* Subtle dark blue gradient background */
+            background-image: linear-gradient(135deg, #1E3A8A, #0F172A 70%, #030712);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Define the entrance animation for the container */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 2. Container Styling (The Card) */
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff; /* Clean white card */
+            padding: 40px;
+            border-radius: 16px; /* High rounding */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), /* Strong shadow for depth */
+                        0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            /* Apply the animation */
+            animation: fadeInUp 0.8s ease-out forwards;
+            /* Ensure the content starts slightly below the center on large screens, or center on mobile */
+            transform: translateY(0);
+        }
+
+        /* 3. Heading Style */
+        .container h2 {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+
+        /* 4. Input Field Styling */
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 14px 16px;
+            margin-bottom: 20px;
+            border: 1px solid #E5E7EB; /* Light grey border */
+            border-radius: 8px;
+            background-color: #F9FAFB; /* Subtle off-white input background */
+            font-size: 1rem;
+            transition: border-color 0.3s, box-shadow 0.3s, background-color 0.3s;
+            outline: none; /* Remove default focus outline */
+        }
+
+        input::placeholder {
+            color: #9CA3AF;
+        }
+
+        /* Custom focus state for a secure, banking feel */
+        input:focus {
+            border-color: var(--secondary-teal); /* Teal focus border */
+            background-color: #ffffff;
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2); /* Teal glow */
+        }
+
+        /* 5. Button Styling */
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            margin-top: 5px;
+            transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+            box-shadow: 0 4px 6px -1px rgba(30, 58, 138, 0.3);
+        }
+
+        button:hover {
+            background-color: #1A306D; /* Slightly darker on hover */
+            box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.99);
+        }
+
+        /* 6. Link Styling */
+        .link {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #6B7280;
+        }
+
+        .link a {
+            color: var(--secondary-teal);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .link a:hover {
+            color: #0D9488;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Secure Account Setup</h2>
+
+        <input id="name" type="text" placeholder="Full Legal Name">
+        <input id="email" type="email" placeholder="Business Email">
+        <input id="password" type="password" placeholder="Choose a Secure Password">
+
+        <button onclick="registerUser()">Complete Registration</button>
+
+        <div class="link">
+            <a href="index.html">Already have an account? Sign In</a>
+        </div>
+    </div>
+</body>
+</html>

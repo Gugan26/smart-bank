@@ -1,0 +1,10 @@
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/SmartbankApplication.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/controller/AccountController.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/model/Account.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/model/TransactionRecord.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/model/User.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/repository/AccountRepository.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/repository/TransactionRepository.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/repository/UserRepository.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/service/AccountService.java
+/home/gugan/Music/smartbank/backend/smartbank/src/main/java/com/example/smartbank/service/AuthService.java
