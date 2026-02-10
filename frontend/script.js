@@ -85,10 +85,26 @@ async function loadTransactions() {
     const txList = await res.json();
 
     let html = "";
-    txList.forEach(t => {
-        const date = t.createdAt ? t.createdAt.replace("T", " ").slice(0, 19) : "";
-        html += `<li>${date} - ${t.type} - ₹${t.amount} - ${t.note || ""}</li>`;
-    });
+    if (txList.length === 0) {
+        html = '<li style="border: none; color: var(--text-muted); justify-content: center;">No transactions yet</li>';
+    } else {
+        txList.forEach(t => {
+            const date = t.createdAt ? t.createdAt.replace("T", " ").slice(0, 16) : "N/A";
+            const isDeposit = t.type.toLowerCase() === 'deposit';
+            const icon = isDeposit ? '↓' : '↑';
+            const cls = isDeposit ? 'deposit' : 'withdrawal';
+
+            html += `
+                <li>
+                    <div class="tx-icon">${icon}</div>
+                    <div class="tx-details">
+                        <div style="font-weight: 500;">${t.type}</div>
+                        <div class="date">${date}</div>
+                    </div>
+                    <div class="amount ${cls}">${isDeposit ? '+' : '-'} ₹${t.amount}</div>
+                </li>`;
+        });
+    }
 
     document.getElementById("txList").innerHTML = html;
 }
